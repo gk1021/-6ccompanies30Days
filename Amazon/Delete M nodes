@@ -1,0 +1,17 @@
+class Solution:
+    def skipMdeleteN(self, head, M, N):
+        k=M-1
+        j=N
+        while head:
+            if k!=0:
+                k-=1
+            else:
+                node=head.next
+                while j!=0 and node:
+                    j-=1
+                    node=node.next
+                head.next=node
+                k=M-1
+                j=N
+            head=head.next
+                    
